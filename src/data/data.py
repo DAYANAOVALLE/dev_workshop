@@ -67,14 +67,51 @@ class Data:
         pass
     
     def implementar_pila(self):
-        
- 
+        pila=[]
+        def push(elemento):
+            pila.append(elemento)
+        def pop():
+            if not vacio():
+                return pila[-1]
+            return None
+        def cima():
+            if not vacio():
+                return pila[-1]
+            return None
+        def vacio():
+            return len(pila)==0
+        return{
+            "push":push,
+            "pop":pop,
+            "cima":cima,
+            "vacio":vacio
+        }
+    
         pass
     
     def implementar_cola(self):
-  
+        cola=[]
+        def enqueue(elemento):
+            cola.append(elemento)
+        
+        def dequeue():
+            if not vacio():
+                return cola.pop(0)
+            return None
+        def cima():
+            if not vacio():
+                return cola[0]
+            return None
+        def vacio():
+            return len(cola)==0
+        return{
+            "dequeue":dequeue,
+            "enqueue":enqueue,
+            "cima":cima,
+            "vacio":vacio
+        }
         pass
     
     def matriz_transpuesta(self, matriz):
- 
+        return [[matriz[j][i] for j in range(len(matriz))] for i in range(len(matriz[0]))]
         pass
