@@ -30,23 +30,44 @@ class Data:
             return resultados
         pass    
     def merge_ordenado(self, lista1, lista2):
+        i,j = 0,0
+        resultados=[]
+        while i <len(lista1)and j<len(lista2):
+            if lista1[i]<lista2[j]:
+                resultados.append(lista1[i])
+                i+= 1
+            else: 
+                resultados.append(lista2[j])
+                j+= 1
+        resultados.extend(lista1[i:])
+        resultados.extend(lista2[j:])
+        return resultados
         pass
-
-
-    
     def rotar_lista(self, lista, k):
+        n= len(lista)
+        k= k%n
+        return lista[-k: ] + lista[:-k]
    
         pass
     
     def encuentra_numero_faltante(self, lista):
+        n= len(lista) + 1
+        sumatotal= n*(n+1)//2
+        sumalista=sum(lista)
+        return sumatotal-sumalista
  
         pass
     
     def es_subconjunto(self, conjunto1, conjunto2):
+        for ele in conjunto1:
+            if ele not in conjunto2:
+                return False
+            return True
  
         pass
     
     def implementar_pila(self):
+        
  
         pass
     
