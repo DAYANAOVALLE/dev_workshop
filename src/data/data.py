@@ -1,8 +1,4 @@
 class Data:
-    """
-    Clase con métodos para operaciones y manipulaciones de estructuras de datos.
-    Incluye implementaciones y algoritmos para arreglos, listas y otras estructuras.
-    """
     
     def invertir_lista(self, lista):
         inicio=0
@@ -13,14 +9,12 @@ class Data:
             fin -= 1
         return lista
         
-        pass
     
     def buscar_elemento(self, lista, elemento):
         for i in range (len(lista)):
             if lista [i] == elemento:
                 return i
             return -1
-        pass
     
     def eliminar_duplicados(self, lista):
         resultados=[]
@@ -42,13 +36,12 @@ class Data:
         resultados.extend(lista1[i:])
         resultados.extend(lista2[j:])
         return resultados
-        pass
+    
     def rotar_lista(self, lista, k):
         n= len(lista)
         k= k%n
         return lista[-k: ] + lista[:-k]
-   
-        pass
+
     
     def encuentra_numero_faltante(self, lista):
         n= len(lista) + 1
@@ -56,15 +49,12 @@ class Data:
         sumalista=sum(lista)
         return sumatotal-sumalista
  
-        pass
-    
     def es_subconjunto(self, conjunto1, conjunto2):
         for ele in conjunto1:
             if ele not in conjunto2:
                 return False
             return True
- 
-        pass
+
     
     def implementar_pila(self):
         pila=[]
@@ -87,8 +77,6 @@ class Data:
             "vacio":vacio
         }
     
-        pass
-    
     def implementar_cola(self):
         cola=[]
         def enqueue(elemento):
@@ -110,8 +98,6 @@ class Data:
             "cima":cima,
             "vacio":vacio
         }
-        pass
-    
+ 
     def matriz_transpuesta(self, matriz):
         return [[matriz[j][i] for j in range(len(matriz))] for i in range(len(matriz[0]))]
-        pass
