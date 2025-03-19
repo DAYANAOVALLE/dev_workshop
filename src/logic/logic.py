@@ -19,12 +19,10 @@ class Logica:
         return not (a or b)
     
     def XNOR(self, a, b):
-        return a == b
+        return a==b
     
     def implicacion(self, a, b):
         return not a or b
     
     def bi_implicacion(self, a, b):
-        return a == b
-    
-    
+        return a==b
