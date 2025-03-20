@@ -18,11 +18,8 @@ class Strings:
         return contador
     
     def contar_consonantes(self, texto):
-        consonantes = "bcdfghjklmnpqrstvwxyz"
-        contador = 0
-        for char in texto.lower():
-            if char in consonantes:
-                contador += 1
+        consonantes = "bcdfghjklmnpqrstvwxz"
+        contador = sum(1 for char in texto.lower() if char in consonantes)
         return contador
 
     def es_anagrama(self, texto1, texto2):
