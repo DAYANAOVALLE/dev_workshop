@@ -10,8 +10,14 @@ class Data:
         return -1
     
     def eliminar_duplicados(self, lista):
-        return list(dict.fromkeys(lista))
-    
+        resultados = []
+        seen = set()
+        for ele in lista:
+            if (ele, type(ele)) not in seen:
+                resultados.append(ele)
+                seen.add((ele, type(ele)))  
+        return resultados 
+            
     def merge_ordenado(self, lista1, lista2):
         i, j = 0, 0
         resultados = []
