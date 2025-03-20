@@ -18,12 +18,13 @@ class Strings:
         return contador
     
     def contar_consonantes(self, texto):
+        consonantes = "bcdfghjklmnpqrstvwxyz"
         contador = 0
         for char in texto.lower():
-            if char.isalpha() and char not in "aeiou":
+            if char in consonantes:
                 contador += 1
         return contador
-    
+
     def es_anagrama(self, texto1, texto2):
         def limpiar(texto):
             return "".join(c.lower() for c in texto if c.isalpha())
@@ -80,4 +81,3 @@ class Strings:
             if texto[i:i + len_sub] == subcadena:
                 posiciones.append(i)
         return posiciones
-        pass
