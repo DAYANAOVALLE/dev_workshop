@@ -18,8 +18,10 @@ class Strings:
         return contador
     
     def contar_consonantes(self, texto):
-        consonantes = "bcdfghjklmnpqrstvwxz"
-        contador = sum(1 for char in texto.lower() if char in consonantes)
+        contador = 0
+        for char in texto.lower():
+            if char.isalpha() and char not in "aeiou":
+                contador += 1
         return contador
 
     def es_anagrama(self, texto1, texto2):
@@ -33,7 +35,6 @@ class Strings:
         return len(palabras)
     
     def palabras_mayus(self, texto):
-
         palabras = texto.split(" ")
         return " ".join(p.capitalize() for p in palabras)
 
