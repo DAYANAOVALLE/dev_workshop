@@ -1,4 +1,5 @@
 import math
+from math import gcd
 class Geometria:
     """
     Class with geometric exercises.
@@ -72,15 +73,19 @@ class Geometria:
     
     def pendiente_recta(self, x1, y1, x2, y2):
         if x1 == x2:
-            return None 
-        return round((y2 - y1) / (x2 - x1), 2)  
+            raise ZeroDivisionError("pendiente infinita para línea vertical")
+        return (y2 - y1) / (x2 - x1)
+  
     
     def ecuacion_recta(self, x1, y1, x2, y2):
         a = y2 - y1
         b = x1 - x2
-        c = a * x1 + b * y1
-        if c != 0:
-            c = -c
+        c = -(a * x1 + b * y1)
+        if a < 0 or (a == 0 and b < 0):
+            a, b, c = -a, -b, -c
+            divisor = gcd(gcd(a, b), c)
+            if divisor != 0:
+                a, b, c = a // divisor, b // divisor, c // divisor
         return (a, b, c)
     
     def area_poligono_regular(self, num_lados, lado, apotema):
